@@ -5,7 +5,7 @@ using Persistence.Contracts.DbSets.Products.Parameters;
 
 namespace Application.Features.Commands.RemoveProduct;
 
-internal sealed class RemoveProductHandler(IDbContext context, TimeProvider timeProvider) : IRequestHandler<RemoveProductCommand>
+internal sealed class RemoveProductHandler(IDbContext context) : IRequestHandler<RemoveProductCommand>
 {
     public async Task Handle(RemoveProductCommand request, CancellationToken cancellationToken)
     {
