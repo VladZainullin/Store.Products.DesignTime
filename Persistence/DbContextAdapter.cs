@@ -10,7 +10,7 @@ internal sealed class DbContextAdapter(AppDbContext context) :
     IMigrationContext,
     ITransactionContext
 {
-    public IProductDbSet Categories { get; } = new ProductDbSet(context);
+    public IProductDbSet Products { get; } = new ProductDbSet(context);
 
     public Task SaveChangesAsync(CancellationToken cancellationToken)
     {

@@ -4,7 +4,7 @@ namespace Persistence.Contracts;
 
 public interface IDbContext
 {
-    IProductDbSet Categories { get; }
+    IProductDbSet Products { get; }
     
     Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }
