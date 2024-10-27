@@ -10,7 +10,5 @@ public readonly struct CreateProductParameters
 
     public required decimal Cost { get; init; }
 
-    public required Guid Photo { get; init; }
-
     public required TimeProvider TimeProvider { get; init; }
 }
