@@ -89,6 +89,8 @@ public sealed class Product
     public decimal Cost => _cost;
 
     public Guid CategoryId => _categoryId;
+    
+    public IReadOnlyCollection<object> DomainEvents => _domainEvents.AsReadOnly();
 
     public void SetTitle(SetProductTitleParameters parameters)
     {
