@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{8ECBAD37-CD7F-4928-B8A2-AB75798C3B54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Products.DesignTime.Events", "Store.Products.DesignTime.Events\Store.Products.DesignTime.Events.csproj", "{2BCC3F07-C5E5-41E5-BC78-BF88B2615367}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,7 @@ Global
 		{813A7188-8E58-4FDC-BE2E-3A46CCB1F51F} = {ABE549B8-ADEE-43DF-BF2C-8CA7CA497BDE}
 		{CB601795-E96F-4C5B-9C02-1D490E10FB8D} = {ABE549B8-ADEE-43DF-BF2C-8CA7CA497BDE}
 		{412E3A6B-F1C8-4312-B03B-9B6F3E018133} = {029CB260-312B-4E85-8047-9C70FA21F160}
+		{2BCC3F07-C5E5-41E5-BC78-BF88B2615367} = {8ECBAD37-CD7F-4928-B8A2-AB75798C3B54}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5942B6CC-32C1-4631-AFF6-2C7312A07523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -67,5 +72,9 @@ Global
 		{412E3A6B-F1C8-4312-B03B-9B6F3E018133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412E3A6B-F1C8-4312-B03B-9B6F3E018133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{412E3A6B-F1C8-4312-B03B-9B6F3E018133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCC3F07-C5E5-41E5-BC78-BF88B2615367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCC3F07-C5E5-41E5-BC78-BF88B2615367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCC3F07-C5E5-41E5-BC78-BF88B2615367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCC3F07-C5E5-41E5-BC78-BF88B2615367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
