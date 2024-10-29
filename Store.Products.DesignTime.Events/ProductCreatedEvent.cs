@@ -8,13 +8,11 @@ public sealed class ProductCreatedEvent
 
     public required string Description { get; init; }
 
-    public required Guid Logo { get; init; }
+    public required Guid Photo { get; init; }
 
     public required decimal Cost { get; init; }
 
     public required int Quantity { get; init; }
 
     public required Guid CetegoryId { get; init; }
-
-    public required string CategoryTitle { get; set; }
 }

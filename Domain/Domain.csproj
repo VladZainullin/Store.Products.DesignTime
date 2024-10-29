@@ -5,4 +5,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Store.Products.DesignTime.Events\Store.Products.DesignTime.Events.csproj" />
+    </ItemGroup>
 </Project>

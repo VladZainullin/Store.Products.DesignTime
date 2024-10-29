@@ -1,4 +1,5 @@
 using Domain.Entities.Products.Parameters;
+using Store.Products.DesignTime.Events;
 
 namespace Domain.Entities.Products;
 
@@ -15,8 +16,12 @@ public sealed class Product
     private DateTimeOffset _createdAt;
 
     private int _quantity;
+    
+    private Guid _categoryId;
 
     private decimal _cost;
+
+    private List<object> _domainEvents = [];
 
     private Product()
     {
@@ -54,6 +59,17 @@ public sealed class Product
         });
 
         _createdAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductCreatedEvent
+        {
+            ProductId = Id,
+            Title = Title,
+            Description = Description,
+            Photo = Photo,
+            Cost = Cost,
+            Quantity = Quantity,
+            CetegoryId = CategoryId,
+        });
     }
 
     public Guid Id => _id;
@@ -72,28 +88,66 @@ public sealed class Product
     
     public decimal Cost => _cost;
 
+    public Guid CategoryId => _categoryId;
+
     public void SetTitle(SetProductTitleParameters parameters)
     {
         _title = parameters.Title.Trim();
         _updatedAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductTitleSetEvent
+        {
+            ProductId = Id,
+            Title = Title
+        });
     }
 
     public void SetDescription(SetProductDescriptionParameters parameters)
     {
         _description = parameters.Description.Trim();
         _updatedAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductDescriptionSetEvent
+        {
+            ProductId = Id,
+            Description = Description
+        });
     }
 
     public void SetQuantity(SetProductQuantityParameters parameters)
     {
         _quantity = parameters.Quantity;
         _updatedAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductQuantitySetEvent
+        {
+            ProductId = Id,
+            Quantity = Quantity
+        });
     }
 
     public void SetCost(SetProductCostParameters parameters)
     {
         _cost = parameters.Cost;
         _updatedAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductCostSetEvent
+        {
+            ProductId = Id,
+            Cost = Cost
+        });
+    }
+
+    public void SetCategory(SetProductCategoryParameters parameters)
+    {
+        _categoryId = parameters.CategoryId;
+        _updatedAt = parameters.TimeProvider.GetUtcNow();
+        
+        _domainEvents.Add(new ProductCategorySetEvent
+        {
+            ProductId = Id,
+            CategoryId = CategoryId
+        });
     }
 
     public void UpdatePhoto(SetProductPhotoParameters parameters)
